@@ -15,7 +15,7 @@ class ApiService {
     if (!this.useDummyData) {
       final response =
           await http.get(Uri.https("www.googleapis.com", "customsearch/v1", {
-        'key': apiKey,
+        'key': apiKey2,
         'cx': ctxKey,
         'q': q,
         'start': start,
@@ -26,7 +26,7 @@ class ApiService {
         return respData;
       } else {
         print('request failed');
-        return {};
+        return apiResponse;
       }
     }
     return apiResponse;
